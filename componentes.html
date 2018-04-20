@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="css/material.min.css">
+  <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <style type="text/css">
+  body{ 
+    background: url("https://cn.pling.com/img/b/7/1/7/e105204712dfa5ed2b3f17254d561ce261fd.jpg") no-repeat center center fixed; 
+    -moz-background-size: cover; 
+    -o-background-size: cover; 
+    -khtml-opacity: .50; 
+    height: 100%; 
+  }
+  nav {
+    width:100%;
+  }
+  .search:focus {
+    outline: none !important;
+    border:0px 0px 1px 0px solid black;
+    box-shadow: 0 0 0px;
+  }
+  .img {
+    height: 50px;
+    width: 50px;
+    background-image: url("https://http2.mlstatic.com/fotos-5x5-cm-visa-estados-unidos-eeuu-y-otros-6-fotos-carnet-D_NQ_NP_23142-MLA20241872874_022015-F.jpg");
+    background-size: 50px 50px;
+    border-radius:50%;
+    float: right;
+  }
+  .buscarMovil {
+    height: 60px;
+    width: 60px;
+    margin-bottom: 3.5%;
+    margin-right: 3.5%;
+  }
+  .buscarPC {
+    display:none;
+  }
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /*buscador empresa movil*/
+
+  .botonEmp .float{
+    position:fixed;
+    width:60px;
+    height:60px;
+    bottom:40px;
+    right:40px;
+    background-color:green;
+    color:#FFF;
+    border-radius:50px;
+    text-align:center;
+    box-shadow: 2px 2px 3px #999;
+    z-index:1000;
+    animation: bot-to-top 2s ease-out;
+    
+  }
+
+  .botonEmp ul{
+    position:fixed;
+    right:40px;
+    padding-bottom:20px;
+    bottom:80px;
+    z-index:100;
+  }
+
+  .botonEmp ul li{
+    list-style:none;
+    margin-bottom:10px;
+  }
+
+  .botonEmp ul li a{
+    background-color:green;
+    color:#FFF;
+    border-radius:50px;
+    text-align:center;
+    box-shadow: 2px 2px 3px #999;
+    width:60px;
+    height:60px;
+    display:block;
+  }
+
+  /*.botonEmp ul:hover{
+    visibility:visible!important;
+    opacity:1!important;
+    }*/
+
+
+    .botonEmp .my-float{
+      font-size:24px;
+      margin-top:18px;
+    }
+
+    .botonEmp a#menu-share + ul{
+      visibility: hidden;
+    }
+
+  /*.botonEmp a#menu-share:hover + ul{
+    visibility: visible;
+    animation: scale-in 0.5s;
+    }*/
+
+
+
+
+
+
+    /*.servicio {
+      border: solid black 1px;
+      margin-top: 0.5%;
+      width: 80%;
+      margin-left: 10%;
+    }
+    .imagenSer {
+      height: 200px;
+      width: 200px;
+      background-image: url("https://cdn.topgear.es/sites/navi.axelspringer.es/public/styles/gallery_big/public/media/image/2016/09/todos-coches-transformers-5-lamborghini-centenario.jpg?itok=s3pYtMSA");
+      background-size: 200px 200px; 
+      float:left;
+      margin-right: 20px;
+    }
+    .precioSer {
+      float: right;
+      background-color: red;
+      margin-bottom: 0;
+      text-align: center;
+      width: 90px;
+      height: 30px;
+    }
+    .descripcionSer {
+
+      }*/
+      .demo-card-wide.mdl-card {
+        width: 512px;
+      }
+      .demo-card-wide > .mdl-card__title {
+        color: #fff;
+        height: 176px;
+        background: rgba(0,0,0,.5) url('http://icons.iconarchive.com/icons/fasticon/twitter-square/256/twitter-square-icon.png') center / cover;
+
+      }
+      .demo-card-wide > .mdl-card__menu {
+        color: #fff;
+      }
+      .precio {
+        float:right;
+        background-color: red;
+        width: 15%;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        border-radius: 15px 0 0 0  ;
+      }
+      .pre {
+        margin: 0;
+        padding: 0;
+      }
+
+
+      .serv {
+        border: 1px solid black;
+      }
+      .valPre {
+        margin:10px 0;
+      }
+      .cardBackground {
+
+        text-align:center;
+      }
+
+      .cardImg {
+        height:150px;
+        width: 150px;
+        background: url("http://icons.iconarchive.com/icons/fasticon/twitter-square/256/twitter-square-icon.png") no-repeat center;
+        margin:0px auto;
+        /*z-index: 0;
+        opacity: 1.5;
+        /*filter: blur(0px);*/
+
+      }
+      
+
+
+      .servicio {
+        width: 95%;
+        margin-left:2.5%;
+        background-color:white;
+        padding:20px;
+        border-radius: 50px;
+      }
+      .carousel-inner>.item>a>img, .carousel-inner>.item>img { 
+        width: 100%; 
+        height: 350px; 
+      }
+      .imagenes {
+        border-radius: 100% 0 0 0;
+      }
+      .carousel-control {
+        opacity:0;
+      }
+      .carousel-control:hover {
+        opacity:0;
+      }
+      img {
+        border-radius: 90px;
+      }
+      .carousel-control.right {
+        background: none;
+      }
+      .carousel-control.left {
+        background: none;
+      }
+
+
+
+
+
+
+
+
+      @media screen and (min-width: 840px) {
+        .buscarMovil {
+          display: none;
+        }
+        .buscarPC{
+          display: block;
+        }
+        .botonEmp{
+          display: none;
+        }
+        .servicio {
+          width: 80%;
+          margin-left:10%;
+        }
+        .carousel-inner>.item>a>img, .carousel-inner>.item>img { 
+          width: 100%; 
+          height: 700px; 
+        }
+      /*.producto {
+        width: 33%;
+        }*/
+
+
+
+
+      }
+    </style>
+    <script type="text/javascript">
+
+
+      var menu = false;
+      $(document).ready(function(){
+
+        $("#menu-share").on("click", function(event){
+          if(!menu){
+            menu = !menu;
+            $(".botonEmp ul").css("visibility", "visible");
+            $(".botonEmp ul").css("opacity", "1");
+            $(".botonEmp a#menu-share + ul").css("visibility", "visible");
+            $(".botonEmp a#menu-share + ul").css("animation", "scale-in 0.5s");
+            $("#plus").html("clear");
+          }else{
+            menu = !menu; 
+            //alert("oculto");
+            $(".botonEmp ul").css("visibility", "hidden");
+            $(".botonEmp ul").css("opacity", "0");
+            $(".botonEmp a#menu-share + ul").css("visibility", "hidden");
+            $("#plus").html("add");
+          }
+
+        });
+
+        $(".cardBackground").css("filter", "blur(6px)");
+        $(".cardImg").stopPropagation();
+
+
+      });
+
+    </script>
+  </head>
+  <body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+          <nav class="mdl-navigation">
+            <div class="mdl-cell--4-col">
+              <h4>Reserva Tu Reserva</h4>
+            </div>
+            <div class="mdl-cell--4-col buscarPC">
+              <form action="#">
+                <div class="mdl-textfield mdl-cell--9-col">
+                  <input class="mdl-textfield__input search" type="text" id="sample6">
+                </div>
+                <label class="mdl-button mdl-js-button mdl-button--icon mdl-cell--3-col">
+                  <i class="material-icons">search</i>
+                </label>
+              </form> 
+            </div>
+            <div class="mdl-cell--4-col">
+              <div class="img"></div>
+            </div>
+          </nav>
+        </div>
+      </header>
+      <!--Empresa-->
+      <div class="botonEmp">
+
+        <a href="#" class="float" id="menu-share">
+          <button class="mdl-button mdl-js-button mdl-button--fab buscarMovil">
+            <i id="plus" class="material-icons">add</i>
+          </button>
+        </a>
+        <ul>
+          <li><a href="#">
+            <button class="mdl-button mdl-js-button mdl-button--fab buscarMovil">
+              <i class="material-icons">search</i>
+            </button>
+          </a></li>
+          <li><a href="#">
+            <button class="mdl-button mdl-js-button mdl-button--fab buscarMovil">
+              <i class="material-icons">create</i>
+            </button>
+          </a></li>
+        </ul>
+      </div>
+
+      <!--Usuario-->
+    <!--<button class="mdl-button mdl-js-button mdl-button--fab buscarMovil">
+      <i class="material-icons">search</i>
+    </button>-->
+
+
+
+    <!-- Card Servicio -->
+
+    <!--<div class = "mdl-grid">
+      <div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-tablet serv">
+        <div class="demo-card-wide producto">
+          <div class="mdl-card__title">
+
+          </div>
+          <div class=" cardImg"></div>
+          <div class="mdl-card__supporting-text">
+            <h2 class="mdl-card__title-text"><b>COCHE</b></h2>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Mauris sagittis pellentesque lacus eleifend lacinia...
+
+            by empresa
+          </div>
+          <div class="mdl-card__actions pre">
+            <div class="precio">
+              <h6 class="valPre">7000 €</h6>
+            </div>
+          </div>
+          <div class="mdl-card__menu">
+            <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+              <i class="material-icons">share</i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-tablet serv">
+        <div class="demo-card-wide producto">
+
+          <div class="mdl-card__title cardBackground">
+
+            <div class=" cardImg"></div>
+
+          </div>
+          <div class="mdl-card__supporting-text">
+            <h2 class="mdl-card__title-text"><b>COCHE</b></h2>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Mauris sagittis pellentesque lacus eleifend lacinia...
+
+            by empresa
+          </div>
+          <div class="mdl-card__actions pre">
+            <div class="precio">
+              <h6 class="valPre">7000 €</h6>
+            </div>
+          </div>
+          <div class="mdl-card__menu">
+            <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+              <i class="material-icons">share</i>
+            </button>
+          </div>
+        </div>
+        
+      </div>-->
+
+
+      <!-- Servicio -->
+      <div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-tablet servicio">
+        <div class="demo-card-wide producto">
+
+
+
+          <div id="myCarousel" class="carousel slide imagenes" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#myCarousel" data-slide-to="1"></li>
+              <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+              <div class="item active">
+                <div class="prod1"> </div>
+                <img src="https://www.diariomotor.com/imagenes/picscache/750x/mito-coche-rojo-seguro-4-1440px_750x.jpg" alt="<i class='material-icons'>add_a_photo</i>">
+              </div>
+
+              <div class="item">
+                <div class="prod2"></div>
+                <img src="http://www.parquesdisney.info/Imagenes-de-Disney/Walt-Disney-Studios/Coche-rojo.jpg" alt="">
+              </div>
+
+              <div class="item">
+
+                <img src="https://www.pita-baby.com/7901-large_default/orinal-coche-rojo-ninos-orinal-ninos-rojo-orinal-ninos-dibujo-orinal-ninos-economico-orinal-ninos-forma-coche-rojo.jpg" alt="<i class='material-icons'>add_a_photo</i>">
+              </div>
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right"></span>
+              <span class="sr-only">Next</span>
+            </a>
+
+          </div>
+          <br /><br />
+          <div >
+            <h1 class="mdl-card__title-text"><font size="20px"><b>COCHE</b></font></h1>
+            <div class="mdl-grid">
+              <div class="mdl-cell--10-col"><h3>Empresa</h3></div><div class="mdl-cell--2-col"><h3>7000 €</h3></div>
+            </div>
+            <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Mauris sagittis pellentesque lacus eleifend lacinia...</h4>
+
+          </div>
+          <div class="mdl-card__actions">
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+              RESERVAR
+            </button>
+          </div>
+          <div class="mdl-card__menu">
+            <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+              <i class="material-icons">share</i>
+            </button>
+          </div>
+        </div>
+        
+      </div>
+
+
+    </div>
+  </body>
+  </html>

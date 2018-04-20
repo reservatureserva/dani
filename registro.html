@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.blue-pink.min.css">
+	<script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript" src="http://momentjs.com/downloads/moment-with-locales.js"></script>
+	<script type="text/javascript" src="mdl-datepicker.js"></script>
+
+	<style type="text/css">
+	a{
+		font-size: 12px;
+	}
+
+	.card-me {
+		padding-left: 25px;
+		padding-right: 25px;
+		padding-bottom: 25px;
+	}
+
+	.login{
+		display: flex;
+		justify-content: center;
+		position: absolute;
+		top: 25%;
+	}
+
+	body{
+		background-image: url("../img/background.jpg");
+	}
+
+	.login-box {
+		text-align: center;
+		letter-spacing: 1px;
+		position: relative;
+	}
+
+	.social-button {
+		background-position: 25px 0px;
+		box-sizing: border-box;
+		color: rgb(255, 255, 255);
+		cursor: pointer;
+		display: inline-block;
+		height: 50px;
+		line-height: 50px;
+		text-align: left;
+		text-decoration: none;
+		text-transform: uppercase;
+		vertical-align: middle;
+		width: 100%;
+		border-radius: 3px;
+		margin: 10px auto;
+		outline: rgb(255, 255, 255) none 0px;
+		padding-left: 20%;
+		transition: all 0.2s cubic-bezier(0.72, 0.01, 0.56, 1) 0s;
+		-webkit-transition: all .3s ease;
+		-moz-transition: all .3s ease;
+		-ms-transition: all .3s ease;
+		-o-transition: all .3s ease;
+		transition: all .3s ease;
+	}
+
+	#google-connect {
+		background: rgb(255, 255, 255) url('https://eswarasai.com/projects/social-login/img/google-plus.png') no-repeat scroll 5px 0px / 50px 50px padding-box border-box;
+		border: 1px solid rgb(220, 74, 61);
+	}
+
+	#google-connect:hover {
+		border-color: rgb(220, 74, 61);
+		background: rgb(220, 74, 61) url('https://eswarasai.com/projects/social-login/img/google-plus-white.png') no-repeat scroll 5px 0px / 50px 50px padding-box border-box;
+		-webkit-transition: all .8s ease-out;
+		-moz-transition: all .3s ease;
+		-ms-transition: all .3s ease;
+		-o-transition: all .3s ease;
+		transition: all .3s ease-out;
+	}
+
+	#google-connect span {
+		box-sizing: border-box;
+		color: rgb(220, 74, 61);
+		cursor: pointer;
+		text-align: center;
+		text-transform: uppercase;
+		border: 0px none rgb(220, 74, 61);
+		outline: rgb(255, 255, 255) none 0px;
+		-webkit-transition: all .3s ease;
+		-moz-transition: all .3s ease;
+		-ms-transition: all .3s ease;
+		-o-transition: all .3s ease;
+		transition: all .3s ease;
+	}
+
+	#google-connect:hover span {
+		color: #FFF;
+		-webkit-transition: all .3s ease;
+		-moz-transition: all .3s ease;
+		-ms-transition: all .3s ease;
+		-o-transition: all .3s ease;
+		transition: all .3s ease;
+	}
+
+</style>
+<script type="text/javascript">
+	function google() {
+		var provider = new firebase.auth.GoogleAuthProvider();
+		firebase.auth().signInWithPopup(provider).then(function(result) {
+			var token = result.credential.accessToken;
+			var user = result.user;
+			alert("Bienvenido "+user.email);
+		}).catch(function(error) {
+			var errorCode = error.code;
+			var errorMessage = error.message;
+
+			var email = error.email;
+
+			var credential = error.credential;
+			console.log(errorMessage);
+
+		});
+	}
+
+	var config = {
+		apiKey: "AIzaSyBoylqLp2f2ZO7afv-cso52PhCCncoOgbY",
+		authDomain: "login-f6988.firebaseapp.com",
+		databaseURL: "https://login-f6988.firebaseio.com",
+		projectId: "login-f6988",
+		storageBucket: "",
+		messagingSenderId: "18277841873"
+	};
+	firebase.initializeApp(config);
+
+	firebase.auth().onAuthStateChanged(function(user) {
+		if (user) {
+			var displayName = user.displayName;
+			var email = user.email;
+			var emailVerified = user.emailVerified;
+			var photoURL = user.photoURL;
+			var isAnonymous = user.isAnonymous;
+			var uid = user.uid;
+			var providerData = user.providerData;
+			alert("Bienvenido "+email);
+			firebase.auth().signOut().then(function() {
+				alert('Cerrando sesion');
+			}, function(error) {
+				alert('Sign Out Error'+ error);
+			});
+		} else {
+
+		}
+	});
+
+	function calendario() {
+		$("#date").mdldatepicker();
+	}
+</script>
+</head>
+<body>
+	<div class="mdl-grid">
+		<div class="mdl-cell mdl-cell--12-col login">
+			<div class="demo-card-wide mdl-card mdl-shadow--8dp card-me">
+
+				<div align="center">
+					<h4 align="center">Registro</h4>
+					<form action="#">
+						<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+							<input class="mdl-textfield__input" type="text" id="name">
+							<label class="mdl-textfield__label" for="name">Nombre</label>
+						</div>
+						<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+							<input class="mdl-textfield__input" type="email" id="email">
+							<label class="mdl-textfield__label" for="email">Email</label>
+						</div>
+						<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+							<input class="mdl-textfield__input" type="password" id="password">
+							<label class="mdl-textfield__label" for="password">Password</label>
+						</div>
+						<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+							<input class="mdl-textfield__input" type="password" id="repassword">
+							<label class="mdl-textfield__label" for="repassword">Repeat Password</label>
+						</div>
+						<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+							<input class="mdl-textfield__input" type="text" id="dni">
+							<label class="mdl-textfield__label" for="dni">DNI</label>
+						</div>
+						<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+							<input class="mdl-textfield__input" type="number" id="tlf">
+							<label class="mdl-textfield__label" for="tlf">Teléfono</label>
+						</div>
+						<div id="date_container" class="mdl-textfield mdl-js-textfield">
+							<input class="mdl-textfield__input" type="text" id="date" readonly onfocus="calendario()" />
+							<label class="mdl-textfield__label" id="date_label" for="date">Date</label>
+						</div>
+						
+
+
+						<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+							Registrarse
+						</button>
+					</form>
+					<hr>
+					<div class="login-box">
+						<a onclick="google()" class="social-button" id="google-connect"> <span>Connect with Google</span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
